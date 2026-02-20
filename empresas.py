@@ -6,7 +6,7 @@ import time
 import hashlib
 import pytz
 import configparser
-from config_reader import obter_headers_api, ler_token_config
+from config_reader import obter_headers_api
 
 def carregar_configuracoes_target():
     """
@@ -270,9 +270,9 @@ def gerar_csv_empresas():
     print("=" * 80)
     
     # Verificar se token está disponível
-    token = ler_token_config()
-    if not token:
-        print("❌ Falha ao carregar token do arquivo .config")
+    headers = obter_headers_api()
+    if not headers:
+        print("❌ Falha ao carregar token (configure token ou credenciais em [APISOURCE])")
         return None
     
     # Coletar empresas da API

@@ -6,7 +6,7 @@ import time
 import hashlib
 import pytz
 import configparser
-from config_reader import obter_headers_api, ler_token_config, obter_campo_chave_funcionarios
+from config_reader import obter_headers_api, obter_campo_chave_funcionarios
 from api_humanus import buscar_colaboradores_paginado, formatar_data_iso_para_br
 
 def carregar_configuracoes_target():
@@ -261,9 +261,9 @@ def gerar_csv_funcionarios():
     print("         🚀 GERAÇÃO DE CSV DE FUNCIONÁRIOS - API Humanus")
     print("=" * 80)
     
-    token = ler_token_config()
-    if not token:
-        print("❌ Falha ao carregar token do arquivo .config")
+    headers = obter_headers_api()
+    if not headers:
+        print("❌ Falha ao carregar token (configure token ou credenciais em [APISOURCE])")
         return None
     
     colaboradores = consultar_funcionarios_ativos_api_humanus()

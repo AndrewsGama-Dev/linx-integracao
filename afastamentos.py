@@ -10,7 +10,7 @@ import pytz
 import configparser
 import csv
 import io
-from config_reader import obter_headers_api, ler_token_config
+from config_reader import obter_headers_api
 from api_humanus import buscar_colaboradores_paginado, buscar_situacoes, formatar_data_iso_para_br
 
 def carregar_configuracoes():
@@ -298,9 +298,9 @@ def gerar_csv_afastamentos():
     print("     GERACAO DE CSV DE AFASTAMENTOS - API Humanus")
     print("=" * 80)
     
-    token = ler_token_config()
-    if not token:
-        print("Falha ao carregar token do arquivo .config")
+    headers = obter_headers_api()
+    if not headers:
+        print("Falha ao carregar token (configure token ou credenciais em [APISOURCE])")
         return None
     
     print("\n1. Consultando afastamentos na API Humanus...")

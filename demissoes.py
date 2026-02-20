@@ -6,7 +6,7 @@ import time
 import configparser
 import xml.etree.ElementTree as ET
 import os
-from config_reader import obter_headers_api, ler_token_config
+from config_reader import obter_headers_api
 from api_humanus import buscar_colaboradores_paginado, formatar_data_iso_para_br
 
 try:
@@ -390,9 +390,9 @@ def gerar_csv_demissoes():
     print("         📋 GERAÇÃO DE CSV DE DEMISSÕES - API Humanus")
     print("=" * 80)
     
-    token = ler_token_config()
-    if not token:
-        print("❌ Falha ao carregar token do arquivo .config")
+    headers = obter_headers_api()
+    if not headers:
+        print("❌ Falha ao carregar token (configure token ou credenciais em [APISOURCE])")
         return None
     
     colaboradores = buscar_colaboradores_paginado()
