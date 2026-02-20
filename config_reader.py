@@ -45,15 +45,21 @@ def ler_token_config():
 
 def obter_config_api_humanus():
     """
-    Obtém configurações da API Humanus (APISOURCE)
+    Obtém configurações da API Humanus (APISOURCE).
+    Suporta token fixo ou geração via credenciais (alias_name, user_name, password).
     """
     try:
         config = ler_config()
         if config and 'APISOURCE' in config:
             apisource = config['APISOURCE']
+            token = apisource.get('token', '').strip('"').strip()
             return {
                 'url_base': apisource.get('url_base', 'https://humanus.crsistemas.net.br/api/MALHECIDADES/COLABORADOR/colaborador/v2/exportar').strip(),
-                'token': apisource.get('token', '').strip('"').strip(),
+                'token': token if token and token.lower() not in ('', 'seu_token_aqui') else None,
+                'url_token': apisource.get('url_token', 'https://humanus.crsistemas.net.br/api/Autenticacao/Autenticacao/Token').strip(),
+                'alias_name': apisource.get('alias_name', '').strip(),
+                'user_name': apisource.get('user_name', '').strip(),
+                'password': apisource.get('password', '').strip(),
                 'tamanho_pagina': int(apisource.get('tamanho_pagina', 50)),
                 'url_situacao': apisource.get('url_situacao', 'https://humanus.crsistemas.net.br/api/MALHECIDADES/COLABORADOR/situacao/tudo').strip()
             }
@@ -95,15 +101,35 @@ def obter_campo_chave_funcionarios():
 
 def obter_headers_api():
     """
-    Obtém os headers necessários para chamadas à API Humanus
+    Obtém os headers necessários para chamadas à API Humanus.
+    Usa token fixo do .config ou gera token via credenciais (alias_name, user_name, password).
     """
     config = obter_config_api_humanus()
-    if not config or not config.get('token'):
+    if not config:
+        return None
+    
+    token = config.get('token')
+    
+    # Se não tem token fixo, tenta gerar pelas credenciais
+    if not token:
+        alias = config.get('alias_name')
+        user = config.get('user_name')
+        pwd = config.get('password')
+        url_token = config.get('url_token')
+        if url_token and alias and user and pwd:
+            try:
+                from auth_humanus import gerar_token
+                token = gerar_token(url_token, alias, user, pwd, usar_cache=True)
+            except ImportError:
+                print("❌ Módulo auth_humanus não encontrado")
+    
+    if not token:
+        print("❌ Configure token ou credenciais (alias_name, user_name, password) em [APISOURCE]")
         return None
     
     headers = {
         'accept': 'text/plain',
-        'Authorization': f'Bearer {config["token"]}'
+        'Authorization': f'Bearer {token}'
     }
     
     return headers

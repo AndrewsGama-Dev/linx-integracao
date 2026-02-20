@@ -1,5 +1,6 @@
 # Config com tokens (não versionar - criar .config no servidor)
 .config
+.token_humanus
 
 # Ambiente virtual
 venv/

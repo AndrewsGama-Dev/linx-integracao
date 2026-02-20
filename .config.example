@@ -3,7 +3,13 @@
 
 [APISOURCE]
 url_base = https://humanus.crsistemas.net.br/api/MALHECIDADES/COLABORADOR/colaborador/v2/exportar
-token = SEU_TOKEN_AQUI
+# Opção 1: Token fixo (se já tiver o token gerado)
+# token = SEU_TOKEN_AQUI
+# Opção 2: Gerar token automaticamente (preencha as credenciais abaixo)
+url_token = https://humanus.crsistemas.net.br/api/Autenticacao/Autenticacao/Token
+alias_name = POSTOS_MAHLE-PRD
+user_name = API
+password = SUA_SENHA_AQUI
 tamanho_pagina = 50
 url_situacao = https://humanus.crsistemas.net.br/api/MALHECIDADES/COLABORADOR/situacao/tudo
 
