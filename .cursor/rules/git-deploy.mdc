@@ -1,0 +1,28 @@
+---
+description: Sempre fazer push após atualizações e fornecer comandos para o servidor
+alwaysApply: true
+---
+
+# Git e Deploy - Integração Linx
+
+## Após qualquer alteração no código
+
+Sempre que houver mudanças no projeto, faça commit e push para o Git:
+
+```powershell
+git add .
+git status
+git commit -m "descrição da alteração"
+git push origin main
+```
+
+## Comandos para o usuário atualizar no servidor
+
+Após o push, informe ao usuário os comandos para rodar no servidor:
+
+```bash
+cd /home/gogotech/integracao/linx
+git pull
+```
+
+O `.config` do servidor é preservado (não é versionado).
