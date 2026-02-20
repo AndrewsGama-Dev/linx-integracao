@@ -12,6 +12,7 @@ Uso:
 
 import os
 import sys
+import json
 import configparser
 import requests
 
@@ -48,7 +49,11 @@ def obter_credenciais():
 
 def gerar_token(credenciais):
     """Faz POST na API Humanus e retorna o token"""
-    headers = {'Content-Type': 'application/json', 'Accept': '*/*'}
+    headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'User-Agent': 'LinxIntegracao/1.0'
+    }
     payload = {
         'aliasName': credenciais['alias_name'],
         'userName': credenciais['user_name'],
@@ -56,32 +61,56 @@ def gerar_token(credenciais):
     }
     
     try:
-        print("🔑 Obtendo token da API Humanus...")
+        url = credenciais['url_token']
+        print(f"🔑 Obtendo token da API Humanus...")
+        print(f"   URL: {url[:60]}..." if len(url) > 60 else f"   URL: {url}")
         response = requests.post(
-            credenciais['url_token'],
+            url,
             json=payload,
             headers=headers,
             timeout=30
         )
         
+        texto = response.text.strip()
+        
         if response.status_code != 200:
             print(f"❌ Erro: HTTP {response.status_code}")
+            if texto:
+                print(f"   Resposta: {texto[:300]}...")
             return None
         
-        dados = response.json()
+        if not texto:
+            print("❌ Resposta vazia da API")
+            return None
+        
+        # Tenta JSON
         token = None
-        if isinstance(dados, dict):
-            token = dados.get('token') or dados.get('access_token') or dados.get('Token')
-        elif isinstance(dados, str):
-            token = dados
+        try:
+            dados = json.loads(texto)
+            if isinstance(dados, dict):
+                token = dados.get('token') or dados.get('access_token') or dados.get('Token')
+            elif isinstance(dados, str):
+                token = dados
+        except json.JSONDecodeError:
+            # Resposta pode ser o token em texto puro (ex: JWT)
+            if texto.startswith('eyJ') or (len(texto) > 50 and '"' not in texto[:10]):
+                token = texto
+            else:
+                print(f"❌ Resposta inesperada (não é JSON nem token):")
+                print(f"   Status: {response.status_code}, Tamanho: {len(texto)} chars")
+                print(f"   Início: {repr(texto[:300])}")
+                return None
         
         if not token:
             print("❌ Resposta da API não contém token")
             return None
         
         return token
-    except Exception as e:
+    except requests.exceptions.RequestException as e:
         print(f"❌ Erro na requisição: {e}")
+        return None
+    except Exception as e:
+        print(f"❌ Erro: {e}")
         return None
 
 
