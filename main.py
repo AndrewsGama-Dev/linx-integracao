@@ -30,7 +30,7 @@ try:
     import afastamentos
     import ferias
     import demissoes
-    from config_reader import ler_config, ler_token_config
+    from config_reader import ler_config
 except ImportError as e:
     print(f"❌ ERRO: Não foi possível importar um dos módulos necessários: {e}")
     print("📝 Certifique-se de que todos os arquivos estão no mesmo diretório:")
@@ -87,12 +87,18 @@ def verificar_prerequisitos():
                 else:
                     print(f"✅ Seção [{secao}] encontrada")
             
-            # Verificar token
-            token = ler_token_config()
-            if not token:
-                erros.append("❌ Token da API não encontrado na seção [APISOURCE]")
+            # Verificar token ou credenciais para gerar token
+            from config_reader import obter_config_api_humanus
+            cfg = obter_config_api_humanus()
+            tem_token = cfg and cfg.get('token')
+            tem_credenciais = cfg and all([
+                cfg.get('url_token'), cfg.get('alias_name'),
+                cfg.get('user_name'), cfg.get('password')
+            ])
+            if not tem_token and not tem_credenciais:
+                erros.append("❌ Configure token ou credenciais (url_token, alias_name, user_name, password) em [APISOURCE]")
             else:
-                print("✅ Token da API encontrado")
+                print("✅ Token ou credenciais da API encontrados")
     
     # Verificar módulos Python
     modulos_necessarios = [
@@ -112,7 +118,7 @@ def verificar_prerequisitos():
             print(f"   {erro}")
         print("\n📝 AÇÕES NECESSÁRIAS:")
         print("   1. Instale os módulos Python faltantes: pip install requests pandas pytz")
-        print("   2. Certifique-se de que o arquivo .config está configurado corretamente")
+        print("   2. Em [APISOURCE]: use token OU credenciais (url_token, alias_name, user_name, password)")
         print("   3. Verifique se todas as seções necessárias estão no .config")
         return False
     
