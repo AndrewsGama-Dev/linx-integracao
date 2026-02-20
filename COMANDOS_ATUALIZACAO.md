@@ -35,3 +35,19 @@ git pull
 ```
 
 O arquivo `.config` do servidor **não é sobrescrito** (está no .gitignore).
+
+---
+
+## Configuração do Cron (com lock)
+
+Edite o cron: `crontab -e`
+
+Adicione a linha (lock evita execução simultânea):
+
+```bash
+*/30 * * * * flock -n /home/gogotech/integracao/linx/.integrador.lock -c "cd /home/gogotech/integracao/linx && ./integrador.sh >> /home/gogotech/integracao/linx/integrador.log 2>&1"
+```
+
+- `*/30 * * * *` = a cada 30 minutos
+- `flock -n` = se já estiver rodando, não inicia outra instância
+- `.integrador.lock` = arquivo de lock (criado automaticamente)

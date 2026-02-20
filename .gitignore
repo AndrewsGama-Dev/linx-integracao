@@ -27,9 +27,6 @@ logs_demissao/
 # *_dados_detalhados.json
 # erros_*.json
 
-# Lock (evita execução simultânea)
-.integrador.lock
-
 # Arquivos temporários
 *.tmp
 *.temp
