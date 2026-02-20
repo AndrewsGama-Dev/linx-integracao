@@ -1,0 +1,123 @@
+{
+  "cargos_extraidos": {
+    "002": {
+      "codigo": "002",
+      "nome": "ATENDENTE CONVENIENCIA"
+    },
+    "015": {
+      "codigo": "015",
+      "nome": "FRENTISTA"
+    },
+    "003": {
+      "codigo": "003",
+      "nome": "ATENDENTE DE CAIXA"
+    },
+    "004": {
+      "codigo": "004",
+      "nome": "AUX ADMINISTRATIVO"
+    },
+    "018": {
+      "codigo": "018",
+      "nome": "GERENTE"
+    },
+    "006": {
+      "codigo": "006",
+      "nome": "AUX PRODUÇÃO"
+    },
+    "022": {
+      "codigo": "022",
+      "nome": "LAVADOR"
+    },
+    "013": {
+      "codigo": "013",
+      "nome": "CHEFIA DE PISTA"
+    },
+    "024": {
+      "codigo": "024",
+      "nome": "MOTORISTA CARRETEIRO"
+    },
+    "023": {
+      "codigo": "023",
+      "nome": "LUBRIFICADOR"
+    },
+    "001": {
+      "codigo": "001",
+      "nome": "ASSISTENTE MARKETING"
+    },
+    "029": {
+      "codigo": "029",
+      "nome": "DIRETOR(A)"
+    },
+    "014": {
+      "codigo": "014",
+      "nome": "ESTOQUISTA"
+    },
+    "008": {
+      "codigo": "008",
+      "nome": "AUX. DE COZINHA"
+    },
+    "009": {
+      "codigo": "009",
+      "nome": "BARMAN"
+    },
+    "017": {
+      "codigo": "017",
+      "nome": "GARÇONETE"
+    },
+    "016": {
+      "codigo": "016",
+      "nome": "GARÇOM"
+    },
+    "012": {
+      "codigo": "012",
+      "nome": "CHEFE DE COZINHA"
+    },
+    "032": {
+      "codigo": "032",
+      "nome": "CHEFE DE CAIXA "
+    },
+    "010": {
+      "codigo": "010",
+      "nome": "CAIXA"
+    },
+    "007": {
+      "codigo": "007",
+      "nome": "AUX SERV GERAIS"
+    },
+    "020": {
+      "codigo": "020",
+      "nome": "GERENTE FINANCEIRO"
+    },
+    "30": {
+      "codigo": "30",
+      "nome": "OFICIAL DE MANUTENÇÃO"
+    },
+    "019": {
+      "codigo": "019",
+      "nome": "GERENTE ADM"
+    },
+    "026": {
+      "codigo": "026",
+      "nome": "AUXILIAR DE PESSOAL"
+    },
+    "028": {
+      "codigo": "028",
+      "nome": "AUXILIAR MARKETING"
+    },
+    "027": {
+      "codigo": "027",
+      "nome": "AUXILIAR DE RH"
+    },
+    "005": {
+      "codigo": "005",
+      "nome": "AUX DE MANUTENÇÃO"
+    },
+    "031": {
+      "codigo": "031",
+      "nome": "LAVADOR "
+    }
+  },
+  "id_empresa": "1",
+  "total_cargos": 29,
+  "timestamp": "2026-02-17T22:53:12.437990"
+}

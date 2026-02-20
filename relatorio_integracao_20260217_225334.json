@@ -1,0 +1,53 @@
+{
+  "execucao": {
+    "data_hora": "2026-02-17T22:53:34.616581",
+    "sucessos": 5,
+    "falhas": 1,
+    "tempo_total_segundos": 7.22,
+    "tempo_total_minutos": 0.12
+  },
+  "modulos": [
+    {
+      "modulo": "cargos",
+      "descricao": "Cadastro de Cargos",
+      "sucesso": true,
+      "duracao_segundos": 0.96,
+      "timestamp": "2026-02-17T22:53:13.359079"
+    },
+    {
+      "modulo": "departamentos",
+      "descricao": "Cadastro de Departamentos",
+      "sucesso": true,
+      "duracao_segundos": 0.75,
+      "timestamp": "2026-02-17T22:53:17.107395"
+    },
+    {
+      "modulo": "funcionarios",
+      "descricao": "Cadastro de Funcionários",
+      "sucesso": true,
+      "duracao_segundos": 3.09,
+      "timestamp": "2026-02-17T22:53:23.195222"
+    },
+    {
+      "modulo": "afastamentos",
+      "descricao": "Registro de Afastamentos",
+      "sucesso": true,
+      "duracao_segundos": 1.44,
+      "timestamp": "2026-02-17T22:53:27.641294"
+    },
+    {
+      "modulo": "ferias",
+      "descricao": "Registro de Férias",
+      "sucesso": true,
+      "duracao_segundos": 0.97,
+      "timestamp": "2026-02-17T22:53:31.608901"
+    },
+    {
+      "modulo": "demissoes",
+      "descricao": "Processamento de Demissões",
+      "sucesso": false,
+      "duracao_segundos": 0.01,
+      "timestamp": "2026-02-17T22:53:34.615742"
+    }
+  ]
+}

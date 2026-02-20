@@ -1,0 +1,258 @@
+id-afastamento;dtinicio;dtfim;obs;campo_chave;matricula
+10;18/02/2025;18/02/2025;Atestado Médico;matricula;000167
+5;05/03/2020;04/05/2020;Afast. Aux. Doença;matricula;001079
+10;09/04/2025;14/04/2025;Atestado Médico;matricula;001105
+10;29/05/2025;30/05/2025;Atestado Médico;matricula;001105
+10;04/09/2025;05/09/2025;Atestado Médico;matricula;001105
+10;17/09/2025;19/09/2025;Atestado Médico;matricula;001105
+7;01/03/2018;29/06/2018;Afast. Aux. Maternidade;matricula;001108
+7;06/08/2013;04/12/2013;Afast. Aux. Maternidade;matricula;001115
+5;09/03/2015;10/08/2015;Afast. Aux. Doença;matricula;001121
+7;10/08/2015;08/12/2015;Afast. Aux. Maternidade;matricula;001121
+10;31/03/2022;02/04/2022;Atestado Médico;matricula;001138
+5;02/04/2022;14/06/2022;Afast. Aux. Doença;matricula;001138
+5;05/08/2013;01/11/2013;Afast. Aux. Doença;matricula;001151
+10;23/02/2025;25/02/2025;Atestado Médico;matricula;001155
+10;13/04/2025;17/04/2025;Atestado Médico;matricula;001155
+10;04/10/2025;05/10/2025;Atestado Médico;matricula;001155
+10;14/10/2025;14/10/2025;Atestado Médico;matricula;001155
+10;06/12/2025;06/12/2025;Atestado Médico;matricula;001155
+7;01/04/2020;30/07/2020;Afast. Aux. Maternidade;matricula;001179
+5;27/01/2016;18/08/2016;Afast. Aux. Doença;matricula;001185
+7;01/11/2011;29/02/2012;Afast. Aux. Maternidade;matricula;001143
+6;07/06/2016;01/09/2016;Afast. Acid. Trabalho;matricula;001235
+16;02/07/2025;06/07/2025;Licença Paternidade Legal (5 dias);matricula;001245
+5;27/04/2019;01/02/2020;Afast. Aux. Doença;matricula;001251
+10;23/05/2025;25/05/2025;Atestado Médico;matricula;001251
+10;24/01/2026;26/01/2026;Atestado Médico;matricula;001251
+7;30/07/2015;27/11/2015;Afast. Aux. Maternidade;matricula;001259
+6;23/12/2022;;Afast. Acid. Trabalho;matricula;001281
+5;01/04/2018;03/07/2018;Afast. Aux. Doença;matricula;001291
+6;13/05/2017;08/09/2021;Afast. Acid. Trabalho;matricula;001297
+6;16/09/2014;25/04/2015;Afast. Acid. Trabalho;matricula;001307
+5;08/03/2013;14/05/2013;Afast. Aux. Doença;matricula;001309
+5;01/03/2014;12/05/2014;Afast. Aux. Doença;matricula;001329
+7;01/02/2015;01/06/2015;Afast. Aux. Maternidade;matricula;001329
+10;11/11/2023;24/11/2023;Atestado Médico;matricula;001332
+5;25/11/2023;10/01/2024;Afast. Aux. Doença;matricula;001332
+5;18/11/2016;;Afast. Aux. Doença;matricula;001348
+10;21/02/2025;22/02/2025;Atestado Médico;matricula;001353
+10;24/04/2025;25/04/2025;Atestado Médico;matricula;001353
+10;29/04/2025;30/04/2025;Atestado Médico;matricula;001353
+10;01/05/2025;01/05/2025;Atestado Médico;matricula;001353
+10;05/05/2025;06/05/2025;Atestado Médico;matricula;001353
+10;17/05/2025;18/05/2025;Atestado Médico;matricula;001353
+10;21/05/2025;21/05/2025;Atestado Médico;matricula;001353
+10;22/05/2025;22/05/2025;Atestado Médico;matricula;001353
+5;01/05/2012;08/04/2014;Afast. Aux. Doença;matricula;001346
+10;14/02/2025;15/02/2025;Atestado Médico;matricula;001459
+10;22/05/2025;22/05/2025;Atestado Médico;matricula;001517
+10;25/08/2025;25/08/2025;Atestado Médico;matricula;001517
+10;08/10/2025;08/10/2025;Atestado Médico;matricula;001517
+10;16/10/2025;16/10/2025;Atestado Médico;matricula;001537
+10;19/04/2025;22/04/2025;Atestado Médico;matricula;001565
+10;19/07/2025;19/07/2025;Atestado Médico;matricula;001565
+10;12/05/2025;12/05/2025;Atestado Médico;matricula;001575
+10;13/08/2025;13/08/2025;Atestado Médico;matricula;001575
+10;18/04/2025;18/04/2025;Atestado Médico;matricula;001582
+10;02/05/2025;04/05/2025;Atestado Médico;matricula;001582
+10;22/05/2025;28/05/2025;Atestado Médico;matricula;001582
+10;02/08/2025;06/08/2025;Atestado Médico;matricula;001582
+10;27/09/2025;27/09/2025;Atestado Médico;matricula;001582
+10;28/10/2025;01/11/2025;Atestado Médico;matricula;001582
+10;10/06/2025;12/06/2025;Atestado Médico;matricula;001585
+10;30/07/2025;03/08/2025;Atestado Médico;matricula;001585
+10;04/10/2025;04/10/2025;Atestado Médico;matricula;001585
+10;13/10/2025;14/10/2025;Atestado Médico;matricula;001585
+10;18/06/2025;02/07/2025;Atestado Médico;matricula;001587
+5;03/07/2025;14/07/2025;Afast. Aux. Doença;matricula;001587
+5;05/09/2018;09/10/2018;Afast. Aux. Doença;matricula;001365
+7;01/07/2018;29/10/2018;Afast. Aux. Maternidade;matricula;001366
+5;22/02/2015;31/07/2015;Afast. Aux. Doença;matricula;001383
+7;21/01/2016;20/05/2016;Afast. Aux. Maternidade;matricula;001383
+7;01/04/2017;30/07/2017;Afast. Aux. Maternidade;matricula;001383
+10;16/04/2025;16/04/2025;Atestado Médico;matricula;001604
+10;29/04/2025;01/05/2025;Atestado Médico;matricula;001604
+10;08/10/2025;08/10/2025;Atestado Médico;matricula;001604
+10;19/08/2025;19/08/2025;Atestado Médico;matricula;001634
+10;18/10/2025;18/10/2025;Atestado Médico;matricula;001663
+10;20/01/2026;20/01/2026;Atestado Médico;matricula;001680
+5;05/04/2017;03/07/2017;Afast. Aux. Doença;matricula;001015
+7;10/03/2023;08/07/2023;Afast. Aux. Maternidade;matricula;001016
+5;29/04/2023;31/08/2023;Afast. Aux. Doença;matricula;001019
+5;05/10/2018;04/05/2021;Afast. Aux. Doença;matricula;001020
+21;05/05/2021;;Aposentadoria por Invalidez;matricula;001020
+10;06/05/2025;07/05/2025;Atestado Médico;matricula;001003
+10;26/08/2022;29/08/2022;Atestado Médico;matricula;001007
+10;29/08/2022;05/09/2022;Atestado Médico;matricula;001007
+10;05/09/2022;10/09/2022;Atestado Médico;matricula;001007
+10;17/09/2025;18/09/2025;Atestado Médico;matricula;001007
+10;07/05/2025;08/05/2025;Atestado Médico;matricula;001530
+10;26/05/2025;26/05/2025;Atestado Médico;matricula;001530
+10;15/10/2025;16/10/2025;Atestado Médico;matricula;001531
+10;06/11/2025;06/11/2025;Atestado Médico;matricula;001531
+10;08/05/2025;09/05/2025;Atestado Médico;matricula;001572
+10;01/04/2025;02/04/2025;Atestado Médico;matricula;001608
+10;16/08/2025;17/08/2025;Atestado Médico;matricula;001627
+10;28/07/2025;30/07/2025;Atestado Médico;matricula;001633
+10;21/08/2025;22/08/2025;Atestado Médico;matricula;001633
+10;04/09/2025;04/09/2025;Atestado Médico;matricula;001633
+10;06/09/2025;06/09/2025;Atestado Médico;matricula;001633
+10;09/09/2025;10/09/2025;Atestado Médico;matricula;001633
+10;30/08/2025;31/08/2025;Atestado Médico;matricula;001637
+10;18/11/2025;18/11/2025;Atestado Médico;matricula;001671
+10;14/02/2026;14/02/2026;Atestado Médico;matricula;001695
+10;16/10/2025;18/10/2025;Atestado Médico;matricula;000069
+7;29/11/2021;29/03/2022;Afast. Aux. Maternidade;matricula;001030
+10;17/07/2025;17/07/2025;Atestado Médico;matricula;001033
+5;16/03/2018;03/05/2018;Afast. Aux. Doença;matricula;001034
+7;06/12/2019;04/04/2020;Afast. Aux. Maternidade;matricula;001034
+5;01/07/2014;15/09/2014;Afast. Aux. Doença;matricula;001039
+10;27/08/2025;28/08/2025;Atestado Médico;matricula;001398
+10;11/02/2026;12/02/2026;Atestado Médico;matricula;001398
+10;03/11/2024;18/11/2024;Atestado Médico;matricula;001512
+5;19/11/2024;02/03/2025;Afast. Aux. Doença;matricula;001512
+10;15/10/2025;24/10/2025;Atestado Médico;matricula;001512
+10;10/02/2026;10/02/2026;Atestado Médico;matricula;001616
+10;21/05/2025;21/05/2025;Atestado Médico;matricula;001052
+7;16/07/2023;12/11/2023;Afast. Aux. Maternidade;matricula;001055
+7;16/09/2023;13/01/2024;Afast. Aux. Maternidade;matricula;001056
+10;08/06/2025;09/06/2025;Atestado Médico;matricula;001056
+10;06/05/2025;08/05/2025;Atestado Médico;matricula;001059
+10;28/10/2025;29/10/2025;Atestado Médico;matricula;001059
+10;31/10/2025;03/11/2025;Atestado Médico;matricula;001059
+10;04/11/2025;04/11/2025;Atestado Médico;matricula;001059
+25;24/09/2025;24/09/2025;Acomp. - Licença para acomp. de familiar enfermo;matricula;001062
+25;26/09/2025;26/09/2025;Acomp. - Licença para acomp. de familiar enfermo;matricula;001062
+25;27/09/2025;27/09/2025;Acomp. - Licença para acomp. de familiar enfermo;matricula;001062
+25;29/09/2025;03/10/2025;Acomp. - Licença para acomp. de familiar enfermo;matricula;001062
+10;13/05/2025;15/05/2025;Atestado Médico;matricula;001065
+10;08/12/2025;21/12/2025;Atestado Médico;matricula;001065
+10;06/02/2026;09/02/2026;Atestado Médico;matricula;001065
+10;16/06/2025;16/06/2025;Atestado Médico;matricula;001450
+10;06/02/2025;06/02/2025;Atestado Médico;matricula;001451
+10;01/07/2025;01/07/2025;Atestado Médico;matricula;001451
+10;02/07/2025;02/07/2025;Atestado Médico;matricula;001451
+10;29/07/2025;29/07/2025;Atestado Médico;matricula;001451
+10;18/11/2025;18/11/2025;Atestado Médico;matricula;001451
+10;18/05/2025;19/05/2025;Atestado Médico;matricula;001452
+10;15/07/2025;17/07/2025;Atestado Médico;matricula;001452
+10;14/08/2025;15/08/2025;Atestado Médico;matricula;001452
+10;24/07/2025;24/07/2025;Atestado Médico;matricula;001516
+10;05/05/2025;05/05/2025;Atestado Médico;matricula;001520
+10;11/04/2025;11/04/2025;Atestado Médico;matricula;001591
+10;28/05/2025;30/05/2025;Atestado Médico;matricula;001591
+10;04/12/2025;06/12/2025;Atestado Médico;matricula;001591
+10;04/05/2025;04/05/2025;Atestado Médico;matricula;001599
+10;04/10/2025;04/10/2025;Atestado Médico;matricula;001614
+10;27/10/2025;27/10/2025;Atestado Médico;matricula;001614
+10;28/09/2025;03/10/2025;Atestado Médico;matricula;001626
+10;26/12/2025;26/12/2025;Atestado Médico;matricula;001626
+10;28/12/2025;28/12/2025;Atestado Médico;matricula;001626
+10;13/02/2026;13/02/2026;Atestado Médico;matricula;001696
+10;09/01/2026;09/01/2026;Atestado Médico;matricula;001697
+10;26/01/2026;26/01/2026;Atestado Médico;matricula;001673
+10;27/01/2026;28/01/2026;Atestado Médico;matricula;001673
+10;03/02/2026;03/02/2026;Atestado Médico;matricula;001673
+7;05/11/2023;03/03/2024;Afast. Aux. Maternidade;matricula;000296
+10;11/02/2025;13/02/2025;Atestado Médico;matricula;000296
+10;10/05/2025;10/05/2025;Atestado Médico;matricula;000296
+10;14/05/2025;14/05/2025;Atestado Médico;matricula;000296
+10;22/07/2025;23/07/2025;Atestado Médico;matricula;000296
+10;24/07/2025;25/07/2025;Atestado Médico;matricula;000296
+10;13/11/2025;13/11/2025;Atestado Médico;matricula;000296
+10;01/12/2025;03/12/2025;Atestado Médico;matricula;000296
+7;17/09/2024;14/01/2025;Afast. Aux. Maternidade;matricula;000324
+10;07/06/2025;07/06/2025;Atestado Médico;matricula;000324
+10;08/06/2025;08/06/2025;Atestado Médico;matricula;000324
+10;22/06/2025;23/06/2025;Atestado Médico;matricula;000324
+10;24/06/2025;24/06/2025;Atestado Médico;matricula;000324
+10;28/06/2025;30/06/2025;Atestado Médico;matricula;000324
+10;19/07/2025;20/07/2025;Atestado Médico;matricula;000324
+6;04/02/2023;05/02/2023;Afast. Acid. Trabalho;matricula;001066
+6;05/02/2023;20/02/2023;Afast. Acid. Trabalho;matricula;001066
+10;10/04/2025;10/04/2025;Atestado Médico;matricula;001070
+10;28/06/2025;29/06/2025;Atestado Médico;matricula;001070
+10;30/06/2025;02/07/2025;Atestado Médico;matricula;001070
+10;11/08/2025;11/08/2025;Atestado Médico;matricula;001070
+10;06/10/2025;07/10/2025;Atestado Médico;matricula;001070
+10;23/10/2025;23/10/2025;Atestado Médico;matricula;001070
+10;01/02/2025;02/02/2025;Atestado Médico;matricula;001075
+10;29/07/2025;29/07/2025;Atestado Médico;matricula;001075
+10;20/10/2025;20/10/2025;Atestado Médico;matricula;001075
+10;16/02/2025;18/02/2025;Atestado Médico;matricula;001240
+7;05/05/2025;01/09/2025;Afast. Aux. Maternidade;matricula;001240
+10;13/09/2025;13/09/2025;Atestado Médico;matricula;001240
+10;15/09/2025;15/09/2025;Atestado Médico;matricula;001240
+10;16/09/2025;18/09/2025;Atestado Médico;matricula;001240
+10;20/06/2025;20/06/2025;Atestado Médico;matricula;001402
+10;22/11/2025;23/11/2025;Atestado Médico;matricula;001402
+10;28/02/2025;28/02/2025;Atestado Médico;matricula;001408
+10;22/04/2025;22/04/2025;Atestado Médico;matricula;001408
+10;07/07/2025;07/07/2025;Atestado Médico;matricula;001408
+10;07/08/2025;07/08/2025;Atestado Médico;matricula;001408
+10;10/08/2025;10/08/2025;Atestado Médico;matricula;001408
+10;19/09/2025;19/09/2025;Atestado Médico;matricula;001408
+10;02/09/2025;02/09/2025;Atestado Médico;matricula;001456
+10;08/08/2025;08/08/2025;Atestado Médico;matricula;001526
+10;14/02/2025;15/02/2025;Atestado Médico;matricula;001533
+10;06/12/2025;06/12/2025;Atestado Médico;matricula;001533
+10;15/12/2025;17/12/2025;Atestado Médico;matricula;001533
+16;04/03/2025;08/03/2025;Licença Paternidade Legal (5 dias);matricula;001535
+10;05/08/2025;06/08/2025;Atestado Médico;matricula;001603
+10;13/11/2025;16/11/2025;Atestado Médico;matricula;001603
+10;24/10/2025;24/10/2025;Atestado Médico;matricula;001668
+10;18/11/2025;19/11/2025;Atestado Médico;matricula;001668
+10;05/01/2026;06/01/2026;Atestado Médico;matricula;001669
+10;07/01/2026;11/01/2026;Atestado Médico;matricula;001669
+10;04/02/2026;04/02/2026;Atestado Médico;matricula;001669
+10;15/02/2026;21/02/2026;Atestado Médico;matricula;001669
+10;10/03/2025;15/03/2025;Atestado Médico;matricula;000163
+10;27/04/2025;29/04/2025;Atestado Médico;matricula;000163
+10;26/07/2025;26/07/2025;Atestado Médico;matricula;000163
+10;18/09/2025;18/09/2025;Atestado Médico;matricula;000163
+7;24/05/2020;21/09/2020;Afast. Aux. Maternidade;matricula;001022
+6;13/03/2023;13/09/2023;Afast. Acid. Trabalho;matricula;001023
+5;19/09/2018;22/12/2018;Afast. Aux. Doença;matricula;001072
+10;11/08/2025;11/08/2025;Atestado Médico;matricula;001505
+10;20/10/2025;20/10/2025;Atestado Médico;matricula;001505
+10;07/11/2025;07/11/2025;Atestado Médico;matricula;001584
+10;17/11/2025;17/11/2025;Atestado Médico;matricula;001584
+10;20/10/2025;20/10/2025;Atestado Médico;matricula;001636
+10;10/11/2025;10/11/2025;Atestado Médico;matricula;001636
+10;10/12/2025;23/12/2025;Atestado Médico;matricula;001636
+10;07/01/2026;07/01/2026;Atestado Médico;matricula;001636
+5;08/01/2026;06/04/2026;Afast. Aux. Doença;matricula;001636
+10;18/12/2025;18/12/2025;Atestado Médico;matricula;001444
+10;29/12/2025;29/12/2025;Atestado Médico;matricula;001444
+10;13/01/2026;15/01/2026;Atestado Médico;matricula;001444
+10;27/01/2026;31/01/2026;Atestado Médico;matricula;001444
+10;11/02/2026;15/02/2026;Atestado Médico;matricula;001444
+10;21/04/2025;22/04/2025;Atestado Médico;matricula;001522
+10;04/08/2025;04/08/2025;Atestado Médico;matricula;001522
+10;14/08/2025;14/08/2025;Atestado Médico;matricula;001522
+10;15/08/2025;16/08/2025;Atestado Médico;matricula;001522
+10;28/08/2025;03/09/2025;Atestado Médico;matricula;001522
+10;10/09/2025;15/09/2025;Atestado Médico;matricula;001522
+10;16/09/2025;20/09/2025;Atestado Médico;matricula;001522
+7;01/10/2025;28/01/2026;Afast. Aux. Maternidade;matricula;001522
+10;07/11/2025;07/11/2025;Atestado Médico;matricula;001523
+10;03/12/2025;03/12/2025;Atestado Médico;matricula;001523
+10;08/12/2025;09/12/2025;Atestado Médico;matricula;001523
+10;10/12/2025;12/12/2025;Atestado Médico;matricula;001523
+10;19/12/2025;19/12/2025;Atestado Médico;matricula;001523
+10;27/12/2025;30/12/2025;Atestado Médico;matricula;001523
+10;24/11/2025;26/11/2025;Atestado Médico;matricula;001577
+10;27/11/2025;28/11/2025;Atestado Médico;matricula;001577
+10;02/06/2025;16/06/2025;Atestado Médico;matricula;001611
+5;17/06/2025;30/06/2025;Afast. Aux. Doença;matricula;001611
+10;03/07/2025;03/07/2025;Atestado Médico;matricula;001631
+10;21/10/2025;21/10/2025;Atestado Médico;matricula;001632
+10;15/12/2025;19/12/2025;Atestado Médico;matricula;001632
+10;19/12/2025;21/12/2025;Atestado Médico;matricula;001632
+10;06/12/2025;06/12/2025;Atestado Médico;matricula;001651
+10;07/01/2026;07/01/2026;Atestado Médico;matricula;001679
+10;27/10/2025;27/10/2025;Atestado Médico;matricula;999993
+10;14/12/2025;15/12/2025;Atestado Médico;matricula;999993
+10;16/12/2025;18/12/2025;Atestado Médico;matricula;999993
+10;17/12/2025;26/12/2025;Atestado Médico;matricula;999993

@@ -1,0 +1,105 @@
+utilizando esse projeto de integração vamos apenas mudar onde conseguimos as informaçoes de colaboradores, e como é feito nesse projeto vamos manter o restante que é feito a criação do arquivo csv e a integração com o sistema ifponto.
+
+vamos utilizar apenas os arquivos seguinte e tambem carregar nessa ordem "cargos, depertamentos, funcionarios, afastamentos, ferias, demissão"
+
+todas essas informações para compor os arquivos vamos conseguir na mesma url, apenas alterando as paginas.
+
+
+modo de consulta dos Colaboradores e de todas as informaçoes: 
+
+curl -X 'GET' \
+  'https://humanus.crsistemas.net.br/api/MALHECIDADES/COLABORADOR/colaborador/v2/exportar?NumeroPagina=2&TamanhoPagina=50' \
+  -H 'accept: text/plain' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkFQSSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6IiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6IkFQSSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3N1cm5hbWUiOiJBUEkiLCJBbGlhcyI6IlBPU1RPU19NQUhMRS1QUkQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTiIsIm5iZiI6MTc3MTM0MTg1NCwiZXhwIjoxNzcxNDI4MjU0LCJpc3MiOiJodHRwczovL2Nyc2lzdGVtYXMubmV0LmJyLyIsImF1ZCI6Imh0dHA6Ly9jcnNpc3RlbWFzLm5ldC5ici8ifQ.ewT4IaZ-NLqizlRxQFoRhkYTlI68uWZVLNiR6B6f6G0'
+
+Nessa consulta vamos alterar apenas as paginas de forma crescente até não ter mais resultado e retorna o erro 404.
+
+vamos guardar essa infomação acima de forma configuravel no arquivo .config
+
+
+
+============================================================================
+Iniciando pela composição do arquivo "cargos_api.csv"
+
+a informação "codigo_legado" vamos conseguir no resultado de "pffCodCargo"
+a informação "nome" vamos conseguir no resultado de "pffDescricaoCargo"
+o id-empresa vai ser = "1"
+o restante mantem o que já está no arquivo
+============================================================================
+agora vamos para  a composição do arquivo "departamentos_api.csv"
+
+a informação "codigo_legado" vamos conseguir no resultado de "lotCodlotacao"
+a informação "nome" vamos conseguir no resultado de "lotDenominacao"
+o id-empresa vai ser = "1"
+o restante mantem o que já está no arquivo
+
+============================================================================
+agora vamos para a composição do arquivo "funcionarios_api.csv"
+primeiro vamos ignorar os funcionarios que tenha um evento em  "situacaoPessoa" com a seguinte informação "sitCodSituacao": "3" pois são funcionarios que já foram demitidos.
+
+vamos garantir que tenha a informação "campo_chave" na primeira coluna e vai escrito "cpf" e deixando opção no arquivo .config para ser personalizado caso precise
+a informação "nome" vamos conseguir no resultado de "nomeExtenso"
+a informação "cpf" vamos conseguir no resultado de "pfiCpfnumeroDigito"
+a informação "matricula" vamos conseguir no resultado de "nroMatrExterno"
+a informação "pis" vamos conseguir no resultado de "pfiCpfnumeroDigito"
+a informação "dtadmissao" vamos conseguir no resultado de "pfuDtInicioContrato"
+a informação "email" vamos conseguir no resultado de "pesEmail"
+a informação "endereco" vamos conseguir no resultado de "pesEndRua"
+a informação "bairro" vamos conseguir no resultado de "pesEndBairro"
+a informação "cidade" vamos conseguir no resultado de "pesEndCidade"
+a informação "uf" vamos conseguir no resultado de "pesEndEstado"
+a informação "cep" vamos conseguir no resultado de "pesEndCep"
+a informação "login" vamos conseguir no resultado de "pfiCpfnumeroDigito"
+a informação "cod_empresa" vamos conseguir no resultado de "codEmpresa"
+a informação "codigo_legado_empresa" vamos conseguir no resultado de "codEmpresa"
+a informação "salario" vamos conseguir no resultado de "pffValorSalario"
+a informação "dtnascimento" vamos conseguir no resultado de "pfiDataNascim"
+a informação "nome_mae" vamos conseguir no resultado de "pfiNomeMae"
+a informação "nome_pai" vamos conseguir no resultado de "pfiNomePai"
+a informação "estado_civil" vamos conseguir no resultado de "pfiEstadoCivil" se o Valor for "S" = Solteiro se for "C" = Casado
+a informação "codigo_unidade" vamos conseguir no resultado de "lotCodlotacao"
+a informação "codigo_cargo" vamos conseguir no resultado de "pffCodCargo"
+a informação "nome_cargo" vamos conseguir no resultado de "pffDescricaoCargo"
+
+============================================================================
+agora vamos para a composição do arquivo "afastamentos_api.csv"
+
+todas as informações de afastamentos vamos conseguir em "situacaoPessoa" nele vai ter o codigo do evento e tambem a data do evento.
+
+
+
+a informação "id-afastamento" vamos conseguir no resultado de "sitCodSituacao" com exeçoes de três codigos que temos que ignorar aqui o codigo "3" que é demissão e o codigo "1"  que é ativo e o codigo "2" que é ferias.
+a informação "dtinicio" vamos conseguir no resultado de "sitDataInicio"
+a informação "dtfim" vamos conseguir no resultado de "sitDataFim"
+a informação "obs" vamos conseguir no resultado de uma consulta conforme o id de "sitCodSituacao" vamos consultar no arquivo "consulta_situacao.txt" que está na pasta caso não esteja vamos escrever ele com a consulta na url "https://humanus.crsistemas.net.br/api/MALHECIDADES/COLABORADOR/situacao/tudo"
+a informação "campo_chave" vamos preencher com a informação "matricula"
+a informação "matricula" vamos preencher com a informação "nroMatrExterno"
+
+============================================================================
+agora vamos para a composição do arquivo "ferias_api.csv"
+
+as informações para fazer esse arquivo vamos conseguir em "situacaoPessoa" nele vai ter o codigo do evento e tambem a data do evento, mas vamos usar apenas quando o "sitCodSituacao": "2".
+
+a informação "id-afastamento" vamos conseguir no resultado de "sitCodSituacao" vamos usar somente quando o "sitCodSituacao": "2"
+a informação "dtinicio" vamos conseguir no resultado de "sitDataInicio"
+a informação "dtfim" vamos conseguir no resultado de "sitDataFim"
+a informação "obs" aqui vamos preencher com o nome "Ferias"
+a informação "campo_chave" vamos preencher com a informação "matricula"
+a informação "matricula" vamos preencher com a informação "nroMatrExterno"
+
+============================================================================
+agora vamos para a composição do arquivo "demissoes_api.csv"
+
+as informações para fazer esse arquivo vamos conseguir em "situacaoPessoa" nele vai ter o codigo do evento e tambem a data do evento, mas vamos usar apenas quando o "sitCodSituacao": "3".
+
+a informação "matricula" vamos preencher com a informação "nroMatrExterno"
+a informação "data_demissao" vamos conseguir no resultado de "sitDataInicio"
+a informação "obs" aqui vamos preencher com o nome "Demissao"
+a informação "nome" vamos conseguir no resultado de "nomeExtenso"
+
+
+com isso conseguimos compor todos os arquivos
+
+
+
+

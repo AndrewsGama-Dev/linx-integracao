@@ -1,0 +1,28 @@
+# Copie para .config e preencha os valores
+# cp .config.example .config
+
+[APISOURCE]
+url_base = https://humanus.crsistemas.net.br/api/MALHECIDADES/COLABORADOR/colaborador/v2/exportar
+token = SEU_TOKEN_AQUI
+tamanho_pagina = 50
+url_situacao = https://humanus.crsistemas.net.br/api/MALHECIDADES/COLABORADOR/situacao/tudo
+
+[APITARGET]
+url = https://...
+integracao = gotech
+token_base = ...
+
+[EMPRESAS]
+empresas_permitidas = 004
+
+[CACHE]
+validade_minutos = 60
+
+[FUNCIONARIOS]
+campo_chave = cpf
+
+[SOAP]
+url = https://...
+client_id = gotech
+usuario = gotech
+senha = ...

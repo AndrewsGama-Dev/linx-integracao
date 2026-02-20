@@ -1,0 +1,33 @@
+# Config com tokens (não versionar - criar .config no servidor)
+.config
+
+# Ambiente virtual
+venv/
+.venv/
+env/
+
+# Cache e dados locais
+integracao_cache.db
+*.db
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Logs
+integrador.log
+*.log
+logs/
+logs_demissao/
+
+# CSVs e relatórios gerados (opcional - descomente se não quiser versionar)
+# *_api.csv
+# relatorio_integracao_*.json
+# *_dados_detalhados.json
+# erros_*.json
+
+# Arquivos temporários
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,34 @@
+
+🏖️ RELATÓRIO DE INTEGRAÇÃO DE FÉRIAS - API ALTERDATA
+
+🔍 ANÁLISE REALIZADA:
+Este módulo foca especificamente na coleta e processamento de FÉRIAS dos funcionários.
+
+✅ FILTROS APLICADOS:
+
+1. 📊 SELEÇÃO DE DADOS:
+   - Filtro: afastamentodescricao contém 'férias' (case-insensitive)
+   - Código fixo: ID-AFASTAMENTO = 1011
+   - Período padrão: 30 dias de férias
+
+2. 🎯 MAPEAMENTO ESPECÍFICO:
+   - Só processa registros que contenham 'férias' na descrição
+   - Ignora outros tipos de afastamento
+   - Estimativa inteligente de 30 dias para férias
+
+✅ DADOS GERADOS:
+
+1. 📋 ESTRUTURA CSV:
+   - id-afastamento: 1011 (fixo para férias)
+   - dtinicio: Data estimada de início
+   - dtfim: Data estimada de fim (30 dias após início)
+   - obs: Descrição das férias
+   - campo_chave: matricula
+   - matricula: Código do funcionário
+
+2. 📤 INTEGRAÇÃO:
+   - Endpoint: ponto_afastamento
+   - Mesmo padrão do integracao_folha_ponto.py
+   - Headers lowercase compatíveis
+
+Data do relatório: 2026-02-17 22:53:30

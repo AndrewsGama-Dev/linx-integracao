@@ -1,0 +1,252 @@
+[
+    {
+        "cadCodDetAssunto": "01",
+        "cadDenominacao": "Ativo",
+        "cadReserva": "1"
+    },
+    {
+        "cadCodDetAssunto": "02",
+        "cadDenominacao": "Férias",
+        "cadReserva": "2"
+    },
+    {
+        "cadCodDetAssunto": "03",
+        "cadDenominacao": "Demitido",
+        "cadReserva": "3"
+    },
+    {
+        "cadCodDetAssunto": "04",
+        "cadDenominacao": "Afast. Serv. Militar",
+        "cadReserva": "4"
+    },
+    {
+        "cadCodDetAssunto": "05",
+        "cadDenominacao": "Afast. Aux. Doença",
+        "cadReserva": "5"
+    },
+    {
+        "cadCodDetAssunto": "06",
+        "cadDenominacao": "Afast. Acid. Trabalho",
+        "cadReserva": "6"
+    },
+    {
+        "cadCodDetAssunto": "07",
+        "cadDenominacao": "Afast. Aux. Maternidade",
+        "cadReserva": "7"
+    },
+    {
+        "cadCodDetAssunto": "08",
+        "cadDenominacao": "Afast. Licença s/Remuneração",
+        "cadReserva": "8"
+    },
+    {
+        "cadCodDetAssunto": "09",
+        "cadDenominacao": "Afast. Licença c/Remuneração",
+        "cadReserva": "9"
+    },
+    {
+        "cadCodDetAssunto": "10",
+        "cadDenominacao": "Atestado Médico",
+        "cadReserva": "10"
+    },
+    {
+        "cadCodDetAssunto": "11",
+        "cadDenominacao": "Atest. Médico Ac. Trabalho",
+        "cadReserva": "11"
+    },
+    {
+        "cadCodDetAssunto": "12",
+        "cadDenominacao": "Licença Remunerada Férias",
+        "cadReserva": "12"
+    },
+    {
+        "cadCodDetAssunto": "15",
+        "cadDenominacao": "Licença Maternidade (120 dias a 180 dias)",
+        "cadReserva": "15"
+    },
+    {
+        "cadCodDetAssunto": "16",
+        "cadDenominacao": "Licença Paternidade Legal (5 dias)",
+        "cadReserva": "16"
+    },
+    {
+        "cadCodDetAssunto": "17",
+        "cadDenominacao": "Aborto não Criminoso",
+        "cadReserva": "17"
+    },
+    {
+        "cadCodDetAssunto": "18",
+        "cadDenominacao": "Exercício de Mandato Sindical",
+        "cadReserva": "18"
+    },
+    {
+        "cadCodDetAssunto": "19",
+        "cadDenominacao": "Exercício de Mandato Eleitoral",
+        "cadReserva": "19"
+    },
+    {
+        "cadCodDetAssunto": "20",
+        "cadDenominacao": "Qualificação de  Curso/Programa Art. 476A CLT",
+        "cadReserva": "20"
+    },
+    {
+        "cadCodDetAssunto": "21",
+        "cadDenominacao": "Aposentadoria por Invalidez",
+        "cadReserva": "21"
+    },
+    {
+        "cadCodDetAssunto": "22",
+        "cadDenominacao": "Cessão de Trabalhador",
+        "cadReserva": "22"
+    },
+    {
+        "cadCodDetAssunto": "23",
+        "cadDenominacao": "Cárcere",
+        "cadReserva": "23"
+    },
+    {
+        "cadCodDetAssunto": "24",
+        "cadDenominacao": "Outros Motivos de Afastamento Temporário (MP 936)",
+        "cadReserva": "24"
+    },
+    {
+        "cadCodDetAssunto": "25",
+        "cadDenominacao": "Acomp. - Licença para acomp. de familiar enfermo",
+        "cadReserva": "25"
+    },
+    {
+        "cadCodDetAssunto": "26",
+        "cadDenominacao": "Licença Paternidade Estendida",
+        "cadReserva": "26"
+    },
+    {
+        "cadCodDetAssunto": "27",
+        "cadDenominacao": "Afast. p/participar do Conselho Curador do FGTS",
+        "cadReserva": "27"
+    },
+    {
+        "cadCodDetAssunto": "28",
+        "cadDenominacao": "Afast. candidato a cargo eletivo - Celetistas",
+        "cadReserva": "28"
+    },
+    {
+        "cadCodDetAssunto": "29",
+        "cadDenominacao": "Afast. candidato a cargo eletivo - Não Celetistas",
+        "cadReserva": "29"
+    },
+    {
+        "cadCodDetAssunto": "30",
+        "cadDenominacao": "Lic. Remunerada - Lib.empresa ou acordo/convenção",
+        "cadReserva": "30"
+    },
+    {
+        "cadCodDetAssunto": "31",
+        "cadDenominacao": "Licença Maternidade por adoção ou guarda judicial",
+        "cadReserva": "31"
+    },
+    {
+        "cadCodDetAssunto": "32",
+        "cadDenominacao": "Licença Maternidade - de 180 dias,Lei 13.301/2016.",
+        "cadReserva": "32"
+    },
+    {
+        "cadCodDetAssunto": "33",
+        "cadDenominacao": "Mulher vítima de violência (Lei Maria da Penha)",
+        "cadReserva": "33"
+    },
+    {
+        "cadCodDetAssunto": "34",
+        "cadDenominacao": "Particip. Membro Cons.Nac.da Prev.Social (CNPS)",
+        "cadReserva": "34"
+    },
+    {
+        "cadCodDetAssunto": "35",
+        "cadDenominacao": "Representante Sindical",
+        "cadReserva": "35"
+    },
+    {
+        "cadCodDetAssunto": "36",
+        "cadDenominacao": "Suspensão disciplinar",
+        "cadReserva": "36"
+    },
+    {
+        "cadCodDetAssunto": "37",
+        "cadDenominacao": "Servidor Público em Disponibilidade",
+        "cadReserva": "37"
+    },
+    {
+        "cadCodDetAssunto": "38",
+        "cadDenominacao": "Novo Af. dec. mesmo ac./doença(01) em 60 dias",
+        "cadReserva": "38"
+    },
+    {
+        "cadCodDetAssunto": "39",
+        "cadDenominacao": "Novo Af. dec. mesmo ac./doença(02) não rel.60 dias",
+        "cadReserva": "39"
+    },
+    {
+        "cadCodDetAssunto": "40",
+        "cadDenominacao": "Afast./Licença prevista em reg.próprio, sem remun.",
+        "cadReserva": "40"
+    },
+    {
+        "cadCodDetAssunto": "41",
+        "cadDenominacao": "Afast./Licença prevista em reg.próprio, com remun.",
+        "cadReserva": "41"
+    },
+    {
+        "cadCodDetAssunto": "42",
+        "cadDenominacao": "Licença Maternidade - de 180 dias,Lei 15.156/2025.",
+        "cadReserva": "42"
+    },
+    {
+        "cadCodDetAssunto": "43",
+        "cadDenominacao": "Inat.Trab.Avulso(port.ou não port.)p/per.> 90 dias",
+        "cadReserva": "43"
+    },
+    {
+        "cadCodDetAssunto": "44",
+        "cadDenominacao": "Licença Maternidade - Antecipação e/ou prorrogação",
+        "cadReserva": "44"
+    },
+    {
+        "cadCodDetAssunto": "45",
+        "cadDenominacao": "Primeiros 15 Dias de Afastamento por Covid-19",
+        "cadReserva": "45"
+    },
+    {
+        "cadCodDetAssunto": "46",
+        "cadDenominacao": "Impedimento de concor. à escala para trab. Avulso",
+        "cadReserva": "46"
+    },
+    {
+        "cadCodDetAssunto": "47",
+        "cadDenominacao": "Susp. de pagto serv. públ. por não recadastramento",
+        "cadReserva": "47"
+    },
+    {
+        "cadCodDetAssunto": "48",
+        "cadDenominacao": "Exercício em outro órgão de serv. público cedido",
+        "cadReserva": "48"
+    },
+    {
+        "cadCodDetAssunto": "49",
+        "cadDenominacao": "Qualif-Af.Susp.Contr.Trab.cfe.Art.17 MP 1.116/2022",
+        "cadReserva": "49"
+    },
+    {
+        "cadCodDetAssunto": "50",
+        "cadDenominacao": "Qualif-Af.Susp.Contr.Trab.cfe.Art.19 MP 1.116/2022",
+        "cadReserva": "50"
+    },
+    {
+        "cadCodDetAssunto": "51",
+        "cadDenominacao": "Susp. contr. decor. ajuizamento recl. Trabalhista",
+        "cadReserva": "51"
+    },
+    {
+        "cadCodDetAssunto": "52",
+        "cadDenominacao": "Susp. contr. ajuizamento inq. apuração falta grave",
+        "cadReserva": "52"
+    }
+]
