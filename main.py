@@ -18,6 +18,14 @@ Data: 2025
 
 import sys
 import os
+
+# Corrige encoding no Windows (evita UnicodeEncodeError com emojis)
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 import time
 from datetime import datetime
 import json
@@ -267,6 +275,16 @@ def gerar_relatorio_final(resultados):
 def main():
     """Função principal do sistema"""
     try:
+        # Atualizar token no .config (se houver credenciais) - em toda execução
+        try:
+            from atualizar_token_config import atualizar_token_se_credenciais
+            if not atualizar_token_se_credenciais():
+                print("❌ Falha ao atualizar token. Verifique as credenciais em [APISOURCE].")
+                input("\n❌ Pressione Enter para sair...")
+                return False
+        except ImportError:
+            pass  # Script standalone não disponível, continua com token do .config
+        
         # Imprimir banner
         imprimir_banner()
         

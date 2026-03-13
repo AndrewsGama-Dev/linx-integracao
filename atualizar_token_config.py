@@ -24,17 +24,19 @@ if sys.platform == 'win32':
     except Exception:
         pass
 
-def obter_credenciais():
+def obter_credenciais(silencioso=False):
     """Lê url_token, alias_name, user_name, password do .config"""
     if not os.path.exists('.config'):
-        print("❌ Arquivo .config não encontrado")
+        if not silencioso:
+            print("❌ Arquivo .config não encontrado")
         return None
     
     config = configparser.ConfigParser()
     config.read('.config', encoding='utf-8')
     
     if 'APISOURCE' not in config:
-        print("❌ Seção [APISOURCE] não encontrada no .config")
+        if not silencioso:
+            print("❌ Seção [APISOURCE] não encontrada no .config")
         return None
     
     apisource = config['APISOURCE']
@@ -44,7 +46,8 @@ def obter_credenciais():
     password = apisource.get('password', '').strip()
     
     if not all([url_token, alias_name, user_name, password]):
-        print("❌ Preencha url_token, alias_name, user_name e password em [APISOURCE]")
+        if not silencioso:
+            print("❌ Preencha url_token, alias_name, user_name e password em [APISOURCE]")
         return None
     
     return {
@@ -146,6 +149,24 @@ def gravar_token_no_config(token):
     except Exception as e:
         print(f"❌ Erro ao gravar .config: {e}")
         return False
+
+
+def atualizar_token_se_credenciais(silencioso=False):
+    """
+    Se o .config tiver credenciais (url_token, alias_name, user_name, password),
+    obtém token da API e grava no .config.
+    Retorna True se OK (atualizado ou sem credenciais), False se falhou.
+    Usado no início de cada execução da integração.
+    """
+    credenciais = obter_credenciais(silencioso=True)
+    if not credenciais:
+        return True  # Sem credenciais, usa token fixo se existir
+    
+    token = gerar_token(credenciais)
+    if not token:
+        return False
+    
+    return gravar_token_no_config(token)
 
 
 def main():
