@@ -57,8 +57,8 @@ def gerar_token(url_token, alias_name, user_name, password, usar_cache=True):
             return cached
     
     headers = {
-        'Content-Type': 'application/json',
-        'Accept': '*/*'
+        'accept': '*/*',
+        'Content-Type': 'application/json'
     }
     payload = {
         'aliasName': alias_name,
@@ -70,17 +70,32 @@ def gerar_token(url_token, alias_name, user_name, password, usar_cache=True):
         print("🔑 Gerando token da API Humanus...")
         response = requests.post(url_token, json=payload, headers=headers, timeout=30)
         
+        texto = response.text.strip()
+        
         if response.status_code != 200:
             print(f"❌ Erro ao gerar token: HTTP {response.status_code}")
+            if texto:
+                print(f"   Resposta: {texto[:300]}...")
             return None
         
-        dados = response.json()
-        # API pode retornar {"token": "..."} ou {"access_token": "..."} ou o token direto
+        if not texto:
+            print("❌ Resposta vazia da API")
+            return None
+        
+        # Tenta JSON ou token em texto puro
         token = None
-        if isinstance(dados, dict):
-            token = dados.get('token') or dados.get('access_token') or dados.get('Token')
-        elif isinstance(dados, str):
-            token = dados
+        try:
+            dados = json.loads(texto)
+            if isinstance(dados, dict):
+                token = dados.get('token') or dados.get('access_token') or dados.get('Token')
+            elif isinstance(dados, str):
+                token = dados
+        except json.JSONDecodeError:
+            if texto.startswith('eyJ') or (len(texto) > 50 and '"' not in texto[:10]):
+                token = texto
+            else:
+                print(f"❌ Resposta inesperada: {repr(texto[:200])}...")
+                return None
         
         if token:
             _salvar_token_cache(token)
@@ -92,7 +107,4 @@ def gerar_token(url_token, alias_name, user_name, password, usar_cache=True):
         
     except requests.exceptions.RequestException as e:
         print(f"❌ Erro na requisição de token: {e}")
-        return None
-    except json.JSONDecodeError as e:
-        print(f"❌ Resposta não é JSON válido: {e}")
         return None

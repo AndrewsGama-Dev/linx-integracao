@@ -16,6 +16,14 @@ import json
 import configparser
 import requests
 
+# Corrige encoding no Windows
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+
 def obter_credenciais():
     """Lê url_token, alias_name, user_name, password do .config"""
     if not os.path.exists('.config'):
@@ -48,11 +56,16 @@ def obter_credenciais():
 
 
 def gerar_token(credenciais):
-    """Faz POST na API Humanus e retorna o token"""
+    """
+    Faz POST na API Humanus e retorna o token.
+    Requisição equivalente ao curl:
+      curl -X POST '.../api/Autenticacao/Autenticacao/Token' \
+        -H 'accept: */*' -H 'Content-Type: application/json' \
+        -d '{"aliasName":"...","userName":"...","password":"..."}'
+    """
     headers = {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'User-Agent': 'LinxIntegracao/1.0'
+        'accept': '*/*',
+        'Content-Type': 'application/json'
     }
     payload = {
         'aliasName': credenciais['alias_name'],
