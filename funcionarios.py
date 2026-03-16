@@ -228,6 +228,7 @@ def mapear_colaborador_para_csv(col):
         'campo_chave': campo_chave,
         'nome': col.get('nomeExtenso', ''),
         'cpf': cpf,
+        'cracha': cpf,
         'matricula': matricula,
         'pis': pfi.get('pfiPisnumeroDigito', '') or cpf,
         'dtadmissao': formatar_data_iso_para_br(pfu.get('pfuDtInicioContrato', '')),
@@ -248,6 +249,7 @@ def mapear_colaborador_para_csv(col):
         'codigo_unidade': lotacao.get('lotCodlotacao', ''),
         'codigo_cargo': pff.get('pffCodCargo', ''),
         'nome_cargo': pff.get('pffDescricaoCargo', ''),
+        'timezone': 'America/Sao_Paulo',
     }
     
     # Garantir campo_chave como primeira coluna - reordenar
