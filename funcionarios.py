@@ -215,7 +215,17 @@ def mapear_colaborador_para_csv(col):
     
     # pes* - podem estar no objeto raiz ou em pessoa
     pessoa = col.get('pessoa') or {}
-    pes_email = col.get('pesEmail') or pessoa.get('pesEmail', '')
+    pes_email = (
+        col.get('pesEmail')
+        or pessoa.get('pesEmail')
+        or pfi.get('pesEmail')
+        or ''
+    )
+    if isinstance(pes_email, str):
+        pes_email = pes_email.strip()
+    pes_tel_celular = col.get('pesTelCelular') or pessoa.get('pesTelCelular') or ''
+    if isinstance(pes_tel_celular, str):
+        pes_tel_celular = pes_tel_celular.strip()
     pes_end_rua = col.get('pesEndRua') or pessoa.get('pesEndRua', '')
     pes_end_bairro = col.get('pesEndBairro') or pessoa.get('pesEndBairro', '')
     pes_end_cidade = col.get('pesEndCidade') or pessoa.get('pesEndCidade', '')
@@ -233,12 +243,14 @@ def mapear_colaborador_para_csv(col):
         'pis': pfi.get('pfiPisnumeroDigito', '') or cpf,
         'dtadmissao': formatar_data_iso_para_br(pfu.get('pfuDtInicioContrato', '')),
         'email': pes_email,
+        'celular': pes_tel_celular,
         'endereco': pes_end_rua,
         'bairro': pes_end_bairro,
         'cidade': pes_end_cidade,
         'uf': pes_end_estado,
         'cep': pes_end_cep,
         'login': cpf,
+        'senha': 'Ponto123',
         'cod_empresa': col.get('codEmpresa', ''),
         'codigo_legado_empresa': col.get('codEmpresa', ''),
         'salario': str(pff.get('pffValorSalario', '')),
