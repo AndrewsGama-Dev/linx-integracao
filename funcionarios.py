@@ -196,6 +196,45 @@ def formatar_data_brasileira(data_iso):
     except Exception as e:
         return ""
 
+def _valor_campo_pessoa_api(col, nome_campo):
+    """
+    pesEmail, pesTelCelular e demais pes* costumam vir na raiz do colaborador
+    ou dentro de um objeto aninhado (ex.: pessoa com pesNomeExtenso, pesEmail).
+    Varre a raiz e dicts filhos diretos até encontrar o campo.
+    """
+    if not col or not nome_campo:
+        return ""
+    
+    def _normalizar(val):
+        if val is None:
+            return ""
+        s = str(val).strip()
+        return s
+    
+    v = col.get(nome_campo)
+    if v is not None and _normalizar(v):
+        return _normalizar(v)
+    
+    # Objetos comuns onde a Humanus agrupa cadastro da pessoa
+    for chave in (
+        'pessoa', 'Pessoa', 'pessoaCadastro', 'cadastroPessoa',
+        'dadosPessoa', 'pessoaBasica', 'PessoaBasica'
+    ):
+        obj = col.get(chave)
+        if isinstance(obj, dict):
+            v = obj.get(nome_campo)
+            if v is not None and _normalizar(v):
+                return _normalizar(v)
+    
+    # Qualquer filho dict no primeiro nível que tenha o campo (API varia o nome do wrapper)
+    for valor in col.values():
+        if isinstance(valor, dict) and nome_campo in valor:
+            v = valor.get(nome_campo)
+            if v is not None and _normalizar(v):
+                return _normalizar(v)
+    
+    return ""
+
 def mapear_colaborador_para_csv(col):
     """
     Mapeia um colaborador da API Humanus para o formato CSV.
@@ -213,30 +252,23 @@ def mapear_colaborador_para_csv(col):
     ec = pfi.get('pfiEstadoCivil', '')
     estado_civil = 'Solteiro' if ec == 'S' else ('Casado' if ec == 'C' else '')
     
-    # pes* - podem estar no objeto raiz ou em pessoa
-    pessoa = col.get('pessoa') or {}
-    pes_email = (
-        col.get('pesEmail')
-        or pessoa.get('pesEmail')
-        or pfi.get('pesEmail')
-        or ''
-    )
-    if isinstance(pes_email, str):
-        pes_email = pes_email.strip()
-    pes_tel_celular = col.get('pesTelCelular') or pessoa.get('pesTelCelular') or ''
-    if isinstance(pes_tel_celular, str):
-        pes_tel_celular = pes_tel_celular.strip()
-    pes_end_rua = col.get('pesEndRua') or pessoa.get('pesEndRua', '')
-    pes_end_bairro = col.get('pesEndBairro') or pessoa.get('pesEndBairro', '')
-    pes_end_cidade = col.get('pesEndCidade') or pessoa.get('pesEndCidade', '')
-    pes_end_estado = col.get('pesEndEstado') or pessoa.get('pesEndEstado', '')
-    pes_end_cep = col.get('pesEndCep') or pessoa.get('pesEndCep', '')
+    # pes* - raiz, pessoa aninhada ou outro dict (ver _valor_campo_pessoa_api)
+    pes_email = _valor_campo_pessoa_api(col, 'pesEmail')
+    if not pes_email:
+        pes_email = (pfi.get('pfiMobilityEmailHome') or '').strip()
+    pes_tel_celular = _valor_campo_pessoa_api(col, 'pesTelCelular')
+    pes_end_rua = _valor_campo_pessoa_api(col, 'pesEndRua')
+    pes_end_bairro = _valor_campo_pessoa_api(col, 'pesEndBairro')
+    pes_end_cidade = _valor_campo_pessoa_api(col, 'pesEndCidade')
+    pes_end_estado = _valor_campo_pessoa_api(col, 'pesEndEstado')
+    pes_end_cep = _valor_campo_pessoa_api(col, 'pesEndCep')
     
     campo_chave = obter_campo_chave_funcionarios()
     
+    nome_colab = col.get('nomeExtenso') or _valor_campo_pessoa_api(col, 'pesNomeExtenso')
     funcionario_csv = {
         'campo_chave': campo_chave,
-        'nome': col.get('nomeExtenso', ''),
+        'nome': nome_colab or '',
         'cpf': cpf,
         'cracha': cpf,
         'matricula': matricula,
