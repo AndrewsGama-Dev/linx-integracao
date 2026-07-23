@@ -435,15 +435,26 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         comando = sys.argv[1].lower()
         
-        if comando == "integracao":
+        if comando == "csv":
+            # Só gera o CSV (não envia para a Hevi)
+            arquivo = gerar_csv_funcionarios()
+            if arquivo:
+                print(f"\n✅ CSV gerado: {arquivo}")
+                sys.exit(0)
+            print("\n❌ Falha ao gerar CSV")
+            sys.exit(1)
+        elif comando == "integracao":
             sucesso = processar_integracao_completa()
             if sucesso:
                 print(f"\n🚀 INTEGRAÇÃO FINALIZADA COM SUCESSO!")
             else:
                 print(f"\n💥 INTEGRAÇÃO FALHOU - Verifique os logs acima")
+            sys.exit(0 if sucesso else 1)
         else:
             print("Comandos disponíveis:")
-            print("  python funcionarios.py integracao       - Executar integração completa (PADRÃO)")
+            print("  python funcionarios.py csv          - Gerar apenas o CSV (não envia)")
+            print("  python funcionarios.py integracao   - Integração completa (CSV + envio)")
+            sys.exit(1)
     else:
         # Executar integração completa automaticamente
         sucesso = processar_integracao_completa()
@@ -451,3 +462,4 @@ if __name__ == "__main__":
             print(f"\n🚀 INTEGRAÇÃO FINALIZADA COM SUCESSO!")
         else:
             print(f"\n💥 INTEGRAÇÃO FALHOU - Verifique os logs acima")
+        sys.exit(0 if sucesso else 1)
