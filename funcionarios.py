@@ -169,13 +169,13 @@ def _eh_funcionario_demitido(col):
             return True
     return False
 
-def consultar_funcionarios_ativos_api_humanus():
+def consultar_funcionarios_ativos_api_humanus(force_api=False):
     """
     Coleta funcionários da API Humanus, excluindo os demitidos (sitCodSituacao=3)
     """
     print("🔍 INICIANDO COLETA DE FUNCIONÁRIOS ATIVOS - API Humanus...")
     
-    colaboradores = buscar_colaboradores_paginado()
+    colaboradores = buscar_colaboradores_paginado(force_api=force_api)
     # Filtrar demitidos
     funcionarios_ativos = [c for c in colaboradores if not _eh_funcionario_demitido(c)]
     
@@ -299,7 +299,7 @@ def mapear_colaborador_para_csv(col):
     # Garantir campo_chave como primeira coluna - reordenar
     return funcionario_csv
 
-def gerar_csv_funcionarios():
+def gerar_csv_funcionarios(force_api=False):
     """
     Função principal para gerar o CSV dos funcionários - API Humanus
     """
@@ -312,7 +312,7 @@ def gerar_csv_funcionarios():
         print("❌ Falha ao carregar token (configure token ou credenciais em [APISOURCE])")
         return None
     
-    colaboradores = consultar_funcionarios_ativos_api_humanus()
+    colaboradores = consultar_funcionarios_ativos_api_humanus(force_api=force_api)
     
     if not colaboradores:
         print("❌ Nenhum funcionário ativo foi coletado")
@@ -432,29 +432,40 @@ def processar_integracao_completa():
 if __name__ == "__main__":
     import sys
     
-    if len(sys.argv) > 1:
-        comando = sys.argv[1].lower()
-        
-        if comando == "csv":
-            # Só gera o CSV (não envia para a Hevi)
-            arquivo = gerar_csv_funcionarios()
-            if arquivo:
-                print(f"\n✅ CSV gerado: {arquivo}")
-                sys.exit(0)
-            print("\n❌ Falha ao gerar CSV")
-            sys.exit(1)
-        elif comando == "integracao":
-            sucesso = processar_integracao_completa()
-            if sucesso:
-                print(f"\n🚀 INTEGRAÇÃO FINALIZADA COM SUCESSO!")
-            else:
-                print(f"\n💥 INTEGRAÇÃO FALHOU - Verifique os logs acima")
-            sys.exit(0 if sucesso else 1)
+    args = [a.lower() for a in sys.argv[1:]]
+    force_api = '--force-api' in args or 'force-api' in args
+    # Remove flags para achar o comando (csv / integracao)
+    comando = next((a for a in args if a not in ('--force-api', 'force-api')), None)
+    
+    if force_api:
+        try:
+            from cache_db import limpar_cache_completo
+            limpar_cache_completo()
+            print("🗑️ Cache limpo — forçando nova consulta à API Humanus")
+        except Exception as e:
+            print(f"⚠️ Não foi possível limpar cache: {e}")
+    
+    if comando == "csv":
+        # Só gera o CSV (não envia para a Hevi)
+        arquivo = gerar_csv_funcionarios(force_api=force_api)
+        if arquivo:
+            print(f"\n✅ CSV gerado: {arquivo}")
+            sys.exit(0)
+        print("\n❌ Falha ao gerar CSV")
+        sys.exit(1)
+    elif comando == "integracao":
+        sucesso = processar_integracao_completa()
+        if sucesso:
+            print(f"\n🚀 INTEGRAÇÃO FINALIZADA COM SUCESSO!")
         else:
-            print("Comandos disponíveis:")
-            print("  python funcionarios.py csv          - Gerar apenas o CSV (não envia)")
-            print("  python funcionarios.py integracao   - Integração completa (CSV + envio)")
-            sys.exit(1)
+            print(f"\n💥 INTEGRAÇÃO FALHOU - Verifique os logs acima")
+        sys.exit(0 if sucesso else 1)
+    elif comando:
+        print("Comandos disponíveis:")
+        print("  python funcionarios.py csv                 - Gerar apenas o CSV (não envia)")
+        print("  python funcionarios.py csv --force-api     - Gerar CSV forçando nova consulta à API")
+        print("  python funcionarios.py integracao          - Integração completa (CSV + envio)")
+        sys.exit(1)
     else:
         # Executar integração completa automaticamente
         sucesso = processar_integracao_completa()
